@@ -26,7 +26,7 @@ nodepools:
   diskBus: virtio
   cpuCount: 2
   memorySize: 4
-  networkName: default/workloads
+  networkName: default/services
   networkType: dhcp
   imageName: default/ubuntu-2004
   vmNamespace: default
@@ -44,7 +44,7 @@ nodepools:
   diskBus: virtio
   cpuCount: 2
   memorySize: 4
-  networkName: default/workloads
+  networkName: default/services
   networkType: dhcp
   imageName: default/ubuntu-2004
   vmNamespace: default
