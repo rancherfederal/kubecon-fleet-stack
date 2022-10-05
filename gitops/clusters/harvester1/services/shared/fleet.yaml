@@ -1,6 +1,6 @@
 defaultNamespace: default
 helm:
   chart: ../../../../charts/cluster-template
-  releaseName: cluster-template-demo-alpha
+  releaseName: cluster-template-services-shared
   valuesFiles:
     - values.yaml

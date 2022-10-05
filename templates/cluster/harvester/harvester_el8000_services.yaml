@@ -1,0 +1,44 @@
+#@data/values
+---
+cloud_provider: harvester
+
+#! cluster details
+cluter_name: services-shared
+cluster_labels:
+    environment: services
+    cluster_name: shared
+cluster_annotations: {}
+cloud_secret_name: cattle-global-data:cc-glnl8 #! do script stuff to discover this
+k8s_version: v1.24.2+rke2r1
+
+#! infra settings
+network_name: default/workloads
+node_image_name: default/ubuntu-2004
+cluster_namespace: default
+
+#! controlplane nodes
+controlplane:
+  node_count: 1 #! max of 3
+  labels: {}
+  taints: {}
+
+  #! vm spec
+  disk_size_gb: 20
+  ssh_user: ubuntu
+  cpu_count: 2
+  memory_size_gb: 4
+
+#! worker nodes
+workers:
+  node_count: 3
+  labels: {}
+  taints: {}
+
+  #! disk
+  disk_size_gb: 20
+  ssh_user: ubuntu
+  cpu_count: 2
+  memory_size_gb: 4
+
+
+

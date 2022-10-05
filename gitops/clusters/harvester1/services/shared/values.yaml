@@ -1,11 +1,11 @@
 cloudprovider: harvester
-cloudCredentialSecretName: cattle-global-data:cc-q45sl
+cloudCredentialSecretName: cattle-global-data:cc-glnl8
 cluster:
   annotations: {}
   labels:
-    environment: demo
-    cluster_name: alpha
-  name: rke2-harvester-demo-alpha
+    environment: services
+    cluster_name: shared
+  name: services-shared
 kubernetesVersion: v1.24.2+rke2r1
 monitoring:
   enabled: false
@@ -28,7 +28,7 @@ nodepools:
   memorySize: 4
   networkName: default/workloads
   networkType: dhcp
-  imageName: default/image-4jz2k
+  imageName: default/ubuntu-2004
   vmNamespace: default
   sshUser: ubuntu
 - etcd: false
@@ -46,6 +46,6 @@ nodepools:
   memorySize: 4
   networkName: default/workloads
   networkType: dhcp
-  imageName: default/image-4jz2k
+  imageName: default/ubuntu-2004
   vmNamespace: default
   sshUser: ubuntu
