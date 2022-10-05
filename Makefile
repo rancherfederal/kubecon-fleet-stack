@@ -10,7 +10,7 @@ OPT_ARGS=""
 # deploy vars
 WORKLOADS_KAPP_APP_NAME=workloads
 WORKLOADS_NAMESPACE=default
-LOCAL_CLUSTER_NAME=rancher-aws
+LOCAL_CLUSTER_NAME=rancher-el8000
 
 # template vars
 HARVESTER_CLUSTER_VALUES=$(WORKING_DIR)/templates/cluster/harvester/harvester_samplevalues.yaml
