@@ -1,6 +1,8 @@
 defaultNamespace: default
 helm:
-  chart: ../../../../charts/cluster-template/Chart.yaml
-  releaseName: cluster-template-services-shared
+  chart: cluster-template
+  version: 0.0.1
+  repo: https://harbor.mustafar.lol/chartrepo/rancher
+  releaseName: cluster-template-service-shared
   valuesFiles:
     - values.yaml
