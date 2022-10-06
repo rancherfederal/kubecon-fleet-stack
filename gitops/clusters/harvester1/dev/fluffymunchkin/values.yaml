@@ -1,0 +1,51 @@
+cloudprovider: harvester
+cloudCredentialSecretName: cattle-global-data:cc-glnl8
+cluster:
+  annotations: {}
+  labels:
+    environment: dev
+    cluster_name: fluffymunchkin
+  name: dev-fluffymunchkin
+kubernetesVersion: v1.24.2+rke2r1
+monitoring:
+  enabled: false
+rke:
+  localClusterAuthEndpoint:
+    enabled: false
+nodepools:
+- etcd: true
+  controlplane: true
+  worker: false
+  displayName: control-plane-nodes
+  name: control-plane-nodes
+  labels: {}
+  taints: {}
+  quantity: 1
+  paused: false
+  diskSize: 20
+  diskBus: virtio
+  cpuCount: 2
+  memorySize: 4
+  networkName: default/workloads2
+  networkType: dhcp
+  imageName: default/ubuntu-2004
+  vmNamespace: default
+  sshUser: ubuntu
+- etcd: false
+  controlplane: false
+  worker: true
+  displayName: worker-nodes
+  name: worker-nodes
+  labels: {}
+  taints: {}
+  quantity: 3
+  paused: false
+  diskSize: 20
+  diskBus: virtio
+  cpuCount: 2
+  memorySize: 4
+  networkName: default/workloads2
+  networkType: dhcp
+  imageName: default/ubuntu-2004
+  vmNamespace: default
+  sshUser: ubuntu

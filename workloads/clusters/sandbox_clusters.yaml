@@ -9,4 +9,4 @@ spec:
   targets:
   - clusterName: local
   paths:
-  - "./gitops/clusters/harvester1/services"
+  - "./gitops/clusters/harvester1/sandbox"

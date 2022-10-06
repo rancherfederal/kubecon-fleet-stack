@@ -3,16 +3,16 @@
 cloud_provider: harvester
 
 #! cluster details
-cluter_name: services-shared
+cluter_name: sandbox-alpha
 cluster_labels:
-    environment: services
-    cluster_name: shared
+    environment: sandbox
+    cluster_name: alpha
 cluster_annotations: {}
 cloud_secret_name: cattle-global-data:cc-glnl8 #! do script stuff to discover this
 k8s_version: v1.24.2+rke2r1
 
 #! infra settings
-network_name: default/services
+network_name: default/workloads1
 node_image_name: default/ubuntu-2004
 cluster_namespace: default
 
