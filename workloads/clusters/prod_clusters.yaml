@@ -1,7 +1,7 @@
 kind: GitRepo
 apiVersion: fleet.cattle.io/v1alpha1
 metadata:
-  name: service-cluster-loader
+  name: prod-cluster-loader
   namespace: fleet-local
 spec:
   repo: https://github.com/rancherfederal/kubecon-fleet-stack.git
@@ -9,4 +9,4 @@ spec:
   targets:
   - clusterName: local
   paths:
-  - "./gitops/clusters/harvester1/sandbox"
+  - "./gitops/clusters/harvester1/prod"
