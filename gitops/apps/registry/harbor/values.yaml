@@ -75,15 +75,3 @@ redis:
       repository: https://harbor.mustafar.lol/goharbor/redis-photon
       tag: v2.5.3
 
-# If using an external Postgres DB
-# database:
-#   type: external
-
-#   external:
-#     host: "postgres.example.com"
-#     port: "5432"
-#     username: "example-user"
-#     password: "example-password"
-#     coreDatabase: "registry"
-#     notaryServerDatabase: "notary_server"
-#     notarySignerDatabase: "notary_signer"
