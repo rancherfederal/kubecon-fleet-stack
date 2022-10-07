@@ -1,0 +1,89 @@
+externalURL: https://harbor.svc.mustafar.lol
+
+harborAdminPassword: "Harbor12345"
+
+updateStrategy:
+  type: Recreate
+
+expose:
+  ingress:
+    hosts:
+      core: harbor.svc.mustafar.lol
+      notary: notary.svc.mustafar.lol
+
+persistence:
+  persistentVolumeClaim:
+    registry:
+      size: 25Gi
+      storageClass: "default"
+    chartmuseum:
+      storageClass: "default"
+    jobservice:
+      storageClass: "default"
+    database:
+      storageClass: "default"
+    redis:
+      storageClass: "default"
+    trivy:
+      storageClass: "default"
+portal:
+  image:
+    repository: https://harbor.mustafar.lol/goharbor/harbor-portal
+    tag: v2.5.3
+core:
+  image:
+    repository: https://harbor.mustafar.lol/goharbor/harbor-core
+    tag: v2.5.3
+jobservice:
+  image:
+    repository: https://harbor.mustafar.lol/goharbor/harbor-jobservice
+    tag: v2.5.3
+registry:
+  registry:
+    image:
+      repository: https://harbor.mustafar.lol/goharbor/registry-photon
+      tag: v2.5.3
+  controller:
+    image:
+      repository: https://harbor.mustafar.lol/goharbor/harbor-registryctl
+      tag: v2.5.3
+chartmuseum:
+  image:
+    repository: https://harbor.mustafar.lol/goharbor/chartmuseum-photon
+    tag: v2.5.3
+trivy:
+  image:
+    repository: https://harbor.mustafar.lol/goharbor/trivy-adapter-photon
+    tag: v2.5.3
+notary:
+  server:
+    image:
+      repository: https://harbor.mustafar.lol/goharbor/notary-server-photon
+      tag: v2.5.3
+  signer:
+    image:
+      repository: https://harbor.mustafar.lol/goharbor/notary-signer-photon
+      tag: v2.5.3
+database:
+  internal:
+    image:
+      repository: https://harbor.mustafar.lol/goharbor/harbor-db
+      tag: v2.5.3
+redis:
+  internal:
+    image:
+      repository: https://harbor.mustafar.lol/goharbor/redis-photon
+      tag: v2.5.3
+
+# If using an external Postgres DB
+# database:
+#   type: external
+
+#   external:
+#     host: "postgres.example.com"
+#     port: "5432"
+#     username: "example-user"
+#     password: "example-password"
+#     coreDatabase: "registry"
+#     notaryServerDatabase: "notary_server"
+#     notarySignerDatabase: "notary_signer"
