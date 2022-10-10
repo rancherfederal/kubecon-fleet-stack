@@ -40,7 +40,6 @@ workloads-check: check-tools
 workloads-yes: check-tools
 	@printf "\n===> Synchronizing Workloads with Fleet\n";
 	@kubectx $(LOCAL_CLUSTER_NAME)
-	$(MAKE) _harvester_cloud_credentials
 	@ytt -f $(WORKLOAD_DIR) | kapp deploy -a $(WORKLOADS_KAPP_APP_NAME) -n $(WORKLOADS_NAMESPACE) -f - -y 
 	@kubectx -
 
@@ -48,7 +47,6 @@ workloads-delete: check-tools
 	@printf "\n===> Deleting Workloads with Fleet\n";
 	@kubectx $(LOCAL_CLUSTER_NAME)
 	@kapp delete -a $(WORKLOADS_KAPP_APP_NAME) -n $(WORKLOADS_NAMESPACE)
-	$(MAKE) _harvester_cloud_credentials_delete
 	@kubectx -
 
 status: check-tools
@@ -60,18 +58,18 @@ status: check-tools
 cluster-generate-harvester: check-tools
 	@ytt -f templates/cluster/harvester/harvester_cluster_template.yaml -f $(HARVESTER_CLUSTER_VALUES)
 
-_harvester_cloud_credentials:
-	@for cluster in $(HARVESTER_CLUSTER_NAMES); do \
-    kubectx harvester; \
-    ${SCRIPTS_DIR}/create cloud-provider-$$cluster default $(HARVESTER_API_OVERRIDE); \
-    kubectx -; \
-    kubectl create secret generic cloud-provider-$$cluster --namespace fleet-default --from-file=credential=./harvester_creds.yaml --dry-run=client -o yaml | kubectl apply -f -; \
-    kubectl annotate secret cloud-provider-$$cluster --namespace fleet-default v2prov-secret-authorized-for-cluster="$$cluster"; \
-    rm harvester_creds.yaml; \
-  done
+# _harvester_cloud_credentials:
+# 	@for cluster in $(HARVESTER_CLUSTER_NAMES); do \
+#     kubectx harvester; \
+#     ${SCRIPTS_DIR}/create cloud-provider-$$cluster default $(HARVESTER_API_OVERRIDE); \
+#     kubectx -; \
+#     kubectl create secret generic cloud-provider-$$cluster --namespace fleet-default --from-file=credential=./harvester_creds.yaml --dry-run=client -o yaml | kubectl apply -f -; \
+#     kubectl annotate secret cloud-provider-$$cluster --namespace fleet-default v2prov-secret-authorized-for-cluster="$$cluster"; \
+#     rm harvester_creds.yaml; \
+#   done
 
-_harvester_cloud_credentials_delete:
-	@kubectx $(LOCAL_CLUSTER_NAME)
-	@for cluster in $(HARVESTER_CLUSTER_NAMES); do \
-    kubectl delete secret cloud-provider-$$cluster --namespace fleet-default; \
-  done
+# _harvester_cloud_credentials_delete:
+# 	@kubectx $(LOCAL_CLUSTER_NAME)
+# 	@for cluster in $(HARVESTER_CLUSTER_NAMES); do \
+#     kubectl delete secret cloud-provider-$$cluster --namespace fleet-default; \
+#   done
