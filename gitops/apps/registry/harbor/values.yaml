@@ -15,17 +15,17 @@ persistence:
   persistentVolumeClaim:
     registry:
       size: 25Gi
-      storageClass: "default"
+      storageClass: "harvester"
     chartmuseum:
-      storageClass: "default"
+      storageClass: "harvester"
     jobservice:
-      storageClass: "default"
+      storageClass: "harvester"
     database:
-      storageClass: "default"
+      storageClass: "harvester"
     redis:
-      storageClass: "default"
+      storageClass: "harvester"
     trivy:
-      storageClass: "default"
+      storageClass: "harvester"
 portal:
   image:
     repository: https://harbor.mustafar.lol/goharbor/harbor-portal
