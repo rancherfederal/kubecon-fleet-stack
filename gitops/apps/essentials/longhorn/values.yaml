@@ -46,44 +46,44 @@ enablePSP: true
 global:
   cattle:
     systemDefaultRegistry: ''
-image:
-  csi:
-    attacher:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-attacher
-      tag: v3.2.1
-    nodeDriverRegistrar:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-node-driver-registrar
-      tag: v2.3.0
-    provisioner:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-provisioner
-      tag: v2.1.2
-    resizer:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-resizer
-      tag: v1.2.0
-    snapshotter:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-snapshotter
-      tag: v3.0.3
-  longhorn:
-    backingImageManager:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-backing-image-manager
-      tag: v2_20210820
-    engine:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-engine
-      tag: v1.2.4
-    instanceManager:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-instance-manager
-      tag: v1_20220303
-    manager:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-manager
-      tag: v1.2.4
-    shareManager:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-share-manager
-      tag: v1_20211020
-    ui:
-      repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-ui
-      tag: v1.2.4
-  pullPolicy: IfNotPresent
-  defaultImage: true
+# image:
+#   csi:
+#     attacher:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-attacher
+#       tag: v3.2.1
+#     nodeDriverRegistrar:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-node-driver-registrar
+#       tag: v2.3.0
+#     provisioner:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-provisioner
+#       tag: v2.1.2
+#     resizer:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-resizer
+#       tag: v1.2.0
+#     snapshotter:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-csi-snapshotter
+#       tag: v3.0.3
+#   longhorn:
+#     backingImageManager:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-backing-image-manager
+#       tag: v2_20210820
+#     engine:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-engine
+#       tag: v1.3.1
+#     instanceManager:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-instance-manager
+#       tag: v1_20220303
+#     manager:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-manager
+#       tag: v1.3.1
+#     shareManager:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-share-manager
+#       tag: v1_20211020
+#     ui:
+#       repository: harbor.mustafar.lol/rancher/mirrored-longhornio-longhorn-ui
+#       tag: v1.3.1
+#   pullPolicy: IfNotPresent
+#   defaultImage: true
 ingress:
   annotations: null
   enabled: false
