@@ -4,6 +4,7 @@ WORKING_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 ROOT_DIR := $(shell git rev-parse --show-toplevel)
 WORKLOAD_DIR := ${ROOT_DIR}/workloads
 GITOPS_DIR := ${ROOT_DIR}/gitops
+SCRIPTS_DIR := ${ROOT_DIR}/scripts
 # Secrets
 
 OPT_ARGS=""
@@ -35,6 +36,7 @@ workloads-check: check-tools
 workloads-yes: check-tools
 	@printf "\n===> Synchronizing Workloads with Fleet\n";
 	@kubectx $(LOCAL_CLUSTER_NAME)
+	$(MAKE) _harvester_cloud_credentials ENV=services
 	@ytt -f $(WORKLOAD_DIR) | kapp deploy -a $(WORKLOADS_KAPP_APP_NAME) -n $(WORKLOADS_NAMESPACE) -f - -y 
 	@kubectx -
 
@@ -47,8 +49,16 @@ workloads-delete: check-tools
 status: check-tools
 	@printf "\n===> Inspecting Running Workloads in Fleet\n";
 	@kubectx $(LOCAL_CLUSTER_NAME)
-	@kapp inspect -a $(WORKLOADS_KAPP_APP_NAME) -n $(WORKLOADS_NAMESPACE) 
+	@kapp inspect -a $(WORKLOADS_KAPP_APP_NAME) -n $(WORKLOADS_NAMESPACE)
 	@kubectx -
 
 cluster-generate-harvester: check-tools
 	@ytt -f templates/cluster/harvester/harvester_cluster_template.yaml -f $(HARVESTER_CLUSTER_VALUES)
+
+
+_harvester_cloud_credentials:
+	@kubectx harvester
+	@${SCRIPTS_DIR}/create cloud-provider-$(ENV) default
+	@kubectx -
+	@kubectl create secret generic cloud-provider-$(ENV) --namespace fleet-default --from-file=credential=./harvester_creds.yaml
+	@rm harvester_creds.yaml
