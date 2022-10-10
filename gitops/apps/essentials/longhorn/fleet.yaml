@@ -1,0 +1,8 @@
+defaultNamespace: longhorn-system
+helm:
+  releaseName: longhorn
+  repo: https://harbor.mustafar.lol/chartrepo/library
+  chart: longhorn
+  version: 1.2.4
+  valuesFiles:
+    - values.yaml
