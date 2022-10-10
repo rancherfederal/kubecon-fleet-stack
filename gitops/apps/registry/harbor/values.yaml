@@ -28,15 +28,15 @@ persistence:
       storageClass: "harvester"
 portal:
   image:
-    repository: https://harbor.mustafar.lol/goharbor/harbor-portal
+    repository: harbor.mustafar.lol/goharbor/harbor-portal
     tag: v2.5.3
 core:
   image:
-    repository: https://harbor.mustafar.lol/goharbor/harbor-core
+    repository: harbor.mustafar.lol/goharbor/harbor-core
     tag: v2.5.3
 jobservice:
   image:
-    repository: https://harbor.mustafar.lol/goharbor/harbor-jobservice
+    repository: harbor.mustafar.lol/goharbor/harbor-jobservice
     tag: v2.5.3
 registry:
   registry:

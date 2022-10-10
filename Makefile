@@ -66,7 +66,7 @@ _harvester_cloud_credentials:
     ${SCRIPTS_DIR}/create cloud-provider-$$cluster default $(HARVESTER_API_OVERRIDE); \
     kubectx -; \
     kubectl create secret generic cloud-provider-$$cluster --namespace fleet-default --from-file=credential=./harvester_creds.yaml --dry-run=client -o yaml | kubectl apply -f -; \
-    kubectl annotate secret cloud-provider-$$cluster --namespace fleet-default v2prov-secret-authorized-for-cluster="$$cluster-shared"; \
+    kubectl annotate secret cloud-provider-$$cluster --namespace fleet-default v2prov-secret-authorized-for-cluster="$$cluster"; \
     rm harvester_creds.yaml; \
   done
 
