@@ -1,6 +1,6 @@
 cloudprovider: harvester
 cloudCredentialSecretName: cattle-global-data:cc-jxjf4
-cloudProviderConfigSecretName: secret://fleet-default:cloud-provider-services
+cloudProviderConfigSecretName: secret://fleet-default:cloud-provider-services-shared
 cluster:
   annotations: {}
   labels:
