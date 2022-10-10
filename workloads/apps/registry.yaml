@@ -1,16 +1,17 @@
 kind: GitRepo
 apiVersion: fleet.cattle.io/v1alpha1
 metadata:
-  name: harbor
+  name: registry
   namespace: fleet-default
 spec:
-  repo: https://github.com/rancherfederal/fleet-stack.git
+  repo: https://github.com/rancherfederal/kubecon-fleet-stack.git
   branch: main
   
   targets:
   - clusterSelector:
       matchLabels:
-        environment: dev
+        environment: services
+        cluster_name: shared
 
   paths:
   - "./gitops/apps/registry/"
