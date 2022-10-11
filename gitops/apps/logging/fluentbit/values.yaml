@@ -103,7 +103,7 @@ hostAliases: []
 hostNetwork: false
 image:
   pullPolicy: Always
-  repository: cr.fluentbit.io/fluent/fluent-bit
+  repository: harbor.mustafar.lol/fluent/fluent-bit
   tag: ""
 imagePullSecrets: []
 ingress:
