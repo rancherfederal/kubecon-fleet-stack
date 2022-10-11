@@ -1,0 +1,8 @@
+defaultNamespace: cert-manager
+helm:
+  repo: https://harbor.mustafar.lol/chartrepo/grafana
+  chart: fluent-bit
+  version: 0.20.9
+  releaseName: fluent-bit
+  valuesFiles:
+    - values.yaml
