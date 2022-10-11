@@ -27,8 +27,8 @@ defaultSettings:
   disableReplicaRebuild: null
   disableRevisionCounter: null
   disableSchedulingOnCordonedNode: null
-  guaranteedEngineManagerCPU: null
-  guaranteedReplicaManagerCPU: null
+  guaranteedEngineManagerCPU: 2
+  guaranteedReplicaManagerCPU: 2
   kubernetesClusterAutoscalerEnabled: null
   mkfsExt4Parameters: null
   nodeDownPodDeletionPolicy: null
