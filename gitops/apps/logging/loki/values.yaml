@@ -856,10 +856,10 @@ ingress:
       - /prometheus/api/v1/rules
       - /prometheus/api/v1/alerts
   hosts:
-    - loki.msutafar.lol
+  - loki.svc.mustafar.lol
   tls:
     - hosts:
-        - loki.msutafar.lol
+      - loki.svc.mustafar.lol
       secretName: loki-distributed-tls
 
 # Configuration for the gateway

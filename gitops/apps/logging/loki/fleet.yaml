@@ -1,11 +1,8 @@
 defaultNamespace: cert-manager
 helm:
   repo: https://harbor.mustafar.lol/chartrepo/grafana
-  chart: cert-manager
-  version: 1.7.3
-  releaseName: cert-manager
+  chart: loki
+  version: 3.2.1
+  releaseName: loki
   valuesFiles:
     - values.yaml
-
-dependsOn:
-- name: essentials-gitops-apps-essentials-cert-manager-crds
