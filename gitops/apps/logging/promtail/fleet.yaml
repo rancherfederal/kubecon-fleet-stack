@@ -1,4 +1,4 @@
-defaultNamespace: cert-manager
+defaultNamespace: promtail
 helm:
   repo: https://harbor.mustafar.lol/chartrepo/grafana
   chart: promtail

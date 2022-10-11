@@ -1,4 +1,4 @@
-defaultNamespace: cert-manager
+defaultNamespace: loki
 helm:
   repo: https://harbor.mustafar.lol/chartrepo/grafana
   chart: loki
