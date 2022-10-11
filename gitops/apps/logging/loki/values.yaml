@@ -697,7 +697,7 @@ write:
     # If set to "-", storageClassName: "", which disables dynamic provisioning.
     # If empty or set to null, no storageClassName spec is
     # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
-    storageClass: null
+    storageClass: longhorn
 
 # Configuration for the read node(s)
 read:
@@ -764,7 +764,7 @@ read:
     # If set to "-", storageClassName: "", which disables dynamic provisioning.
     # If empty or set to null, no storageClassName spec is
     # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
-    storageClass: null
+    storageClass: longhorn
 
 # Configuration for the single binary node(s)
 singleBinary:
@@ -829,7 +829,7 @@ singleBinary:
     # If set to "-", storageClassName: "", which disables dynamic provisioning.
     # If empty or set to null, no storageClassName spec is
     # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
-    storageClass: null
+    storageClass: longhorn
 
 # Use either this ingress or the gateway, but not both at once.
 # If you enable this, make sure to disable the gateway.
