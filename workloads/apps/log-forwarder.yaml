@@ -23,4 +23,4 @@ spec:
         environment: prod
 
   paths:
-  - "./gitops/apps/logging/fluentbit"
+  - "./gitops/apps/logging/promtail"

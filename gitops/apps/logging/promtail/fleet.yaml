@@ -1,0 +1,8 @@
+defaultNamespace: cert-manager
+helm:
+  repo: https://harbor.mustafar.lol/chartrepo/grafana
+  chart: promtail
+  version: 6.5.0
+  releaseName: promtail
+  valuesFiles:
+    - values.yaml
