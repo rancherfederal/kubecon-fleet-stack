@@ -835,7 +835,7 @@ singleBinary:
 # If you enable this, make sure to disable the gateway.
 # You'll need to supply authn configuration for your ingress controller.
 ingress:
-  enabled: false
+  enabled: true
   #  ingressClassName: nginx
   annotations: {}
   #    nginx.ingress.kubernetes.io/auth-type: basic
@@ -856,11 +856,11 @@ ingress:
       - /prometheus/api/v1/rules
       - /prometheus/api/v1/alerts
   hosts:
-    - loki.example.com
-#  tls:
-#    - hosts:
-#       - loki.example.com
-#      secretName: loki-distributed-tls
+    - loki.msutafar.lol
+  tls:
+    - hosts:
+        - loki.msutafar.lol
+      secretName: loki-distributed-tls
 
 # Configuration for the gateway
 gateway:
