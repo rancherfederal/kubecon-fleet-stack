@@ -1,6 +1,6 @@
 defaultNamespace: cert-manager
 helm:
-  repo: https://harbor.mustafar.lol/chartrepo/grafana
+  repo: https://harbor.mustafar.lol/chartrepo/fluent
   chart: fluent-bit
   version: 0.20.9
   releaseName: fluent-bit
