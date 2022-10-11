@@ -613,10 +613,10 @@ ingress:
       - /prometheus/api/v1/alerts
   hosts:
   - loki.svc.mustafar.lol
-  tls:
-    - hosts:
-      - loki.svc.mustafar.lol
-      secretName: loki-distributed-tls
+  # tls:
+  #   - hosts:
+  #     - loki.svc.mustafar.lol
+  #     secretName: loki-distributed-tls
 
 # Configuration for the gateway
 gateway:
