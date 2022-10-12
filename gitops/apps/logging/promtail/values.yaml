@@ -2,7 +2,9 @@ affinity: {}
 annotations: {}
 config:
   clients:
-  - url: http://loki.svc.mustafar.lol/loki/api/prom/push
+  - url: https://loki.svc.mustafar.lol/api/prom/push
+    tls_config:
+      insecure_skip_verify: true
   file: |
     server:
       log_level: {{ .Values.config.logLevel }}
