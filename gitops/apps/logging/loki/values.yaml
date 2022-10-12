@@ -17,7 +17,7 @@ loki:
 
 read:
   # -- Number of replicas for the read
-  replicas: 1
+  replicas: 3
   persistence:
     # -- Size of persistent disk
     size: 2Gi
@@ -30,7 +30,7 @@ read:
 
 write:
   # -- Number of replicas for the read
-  replicas: 1
+  replicas: 3
   persistence:
     # -- Size of persistent disk
     size: 2Gi
