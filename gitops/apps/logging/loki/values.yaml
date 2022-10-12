@@ -49,6 +49,10 @@ gateway:
       paths:
       - path: /
         pathType: Prefix
+    tls:
+    - hosts:
+      - loki.svc.mustafar.lol
+    secretName: loki-gateway-tls
   image:
     pullPolicy: IfNotPresent
     registry: harbor.mustafar.lol
