@@ -51,7 +51,7 @@ gateway:
   ingress:
     enabled: true
     hosts:
-    - loki.svc.mustafar.lol
+    - host: loki.svc.mustafar.lol
       paths:
       - path: /
     tls:
