@@ -52,3 +52,8 @@ gateway:
     - hosts:
       - loki.svc.mustafar.lol
       secretName: loki-gateway-tls
+  image:
+    pullPolicy: IfNotPresent
+    registry: harbor.mustafar.lol
+    repository: grafana/nginx-unprivileged
+    tag: 1.19-alpine
