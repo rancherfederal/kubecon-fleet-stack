@@ -5,13 +5,6 @@ global:
     registry: harbor.mustafar.lol
 
 loki:
-  # Configures the readiness probe for all of the Loki pods
-  readinessProbe:
-    httpGet:
-      path: /ready
-      port: http-metrics
-    initialDelaySeconds: 30
-    timeoutSeconds: 1
   image:
     # -- The Docker registry
     registry: harbor.mustafar.lol
@@ -54,6 +47,7 @@ gateway:
     - host: loki.svc.mustafar.lol
       paths:
       - path: /
+        pathType: Prefix
     tls:
     - hosts:
       - loki.svc.mustafar.lol
