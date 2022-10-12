@@ -7,14 +7,15 @@ loki:
 
 promtail:
   enabled: true
+  snippets:
+    pipelineStages:
+    - cri: {}
+    - json:
+      expressions:
+      is_even: is_even
+      level: level
+      version: version
   extraArgs: []
-  pipelineStages:
-  - cri: {}
-  - json:
-    expressions:
-     is_even: is_even
-     level: level
-     version: version
     
   image:
     # -- The Docker registry

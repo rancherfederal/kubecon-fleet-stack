@@ -12,8 +12,10 @@ targetCustomizations:
   helm:
     values:
       promtail:
-        extraArgs: 
-        - -client.external-labels=cluster=services-shared
+        snippets:
+          pipelineStages:
+          - static_labels:
+            cluster: services-shared
   clusterSelector:
     matchLabels:
       environment: services
