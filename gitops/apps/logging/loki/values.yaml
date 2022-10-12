@@ -10,7 +10,7 @@ loki:
     storageClassName: longhorn
     size: 5Gi
   image:
-    repository: grafana/loki
+    repository: harbor.mustafar.lol/grafana/loki
     tag: 2.6.1
     pullPolicy: IfNotPresent
 
