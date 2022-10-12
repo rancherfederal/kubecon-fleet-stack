@@ -2,7 +2,7 @@ affinity: {}
 annotations: {}
 config:
   clients:
-  - url: http://loki.svc.mustafar.lol/loki/api/v1/push
+  - url: http://loki.svc.mustafar.lol/api/prom/push
   file: |
     server:
       log_level: {{ .Values.config.logLevel }}
@@ -159,7 +159,7 @@ extraVolumes: []
 fullnameOverride: null
 image:
   pullPolicy: IfNotPresent
-  registry: docker.io
+  registry: harbor.mustafar.lol
   repository: grafana/promtail
   tag: null
 imagePullSecrets: []
