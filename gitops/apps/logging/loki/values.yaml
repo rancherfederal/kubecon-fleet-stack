@@ -3,6 +3,7 @@ global:
   image:
     # -- Overrides the Docker registry globally for all images
     registry: harbor.mustafar.lol
+  dnsService: rke2-coredns-rke2-coredns
 
 loki:
   image:
