@@ -12,10 +12,11 @@ targetCustomizations:
   helm:
     values:
       promtail:
-        snippets:
-          pipelineStages:
-          - static_labels:
-            cluster: services-shared
+        config:
+          snippets:
+            pipelineStages:
+            - static_labels:
+                cluster: services-shared
   clusterSelector:
     matchLabels:
       environment: services
