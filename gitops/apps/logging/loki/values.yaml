@@ -9,6 +9,10 @@ loki:
     enabled: true
     storageClassName: longhorn
     size: 5Gi
+  image:
+    repository: grafana/loki
+    tag: 2.6.1
+    pullPolicy: IfNotPresent
 
   ingress:
     enabled: true

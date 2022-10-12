@@ -6,3 +6,16 @@ helm:
   releaseName: promtail
   valuesFiles:
     - values.yaml
+
+targetCustomizations:
+- name: services
+  helm:
+    values:
+      promtail:
+        extraArgs: 
+        - -client.external-labels=cluster=services-shared
+  clusterSelector:
+    matchLabels:
+      environment: services
+      cluster_name: shared
+
