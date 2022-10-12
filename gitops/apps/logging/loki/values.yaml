@@ -34,9 +34,21 @@ read:
     # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
     storageClass: longhorn
 
+write:
+  # -- Number of replicas for the read
+  replicas: 1
+  persistence:
+    # -- Size of persistent disk
+    size: 2Gi
+    # -- Storage class to be used.
+    # If defined, storageClassName: <storageClass>.
+    # If set to "-", storageClassName: "", which disables dynamic provisioning.
+    # If empty or set to null, no storageClassName spec is
+    # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
+    storageClass: longhorn
+
 gateway:
   ingress:
-    annotations: {}
     enabled: true
     hosts:
     - loki.svc.mustafar.lol
