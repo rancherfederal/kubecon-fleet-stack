@@ -170,7 +170,7 @@ loki:
       chunks: chunks
       ruler: ruler
       admin: admin
-    type: s3
+    type: filesystem
     s3:
       s3: null
       endpoint: null
@@ -400,7 +400,7 @@ monitoring:
 # Configuration for the write
 write:
   # -- Number of replicas for the write
-  replicas: 3
+  replicas: 1
   image:
     # -- The Docker registry for the write image. Overrides `loki.image.registry`
     registry: null
@@ -447,7 +447,7 @@ write:
   tolerations: []
   persistence:
     # -- Size of persistent disk
-    size: 10Gi
+    size: 2Gi
     # -- Storage class to be used.
     # If defined, storageClassName: <storageClass>.
     # If set to "-", storageClassName: "", which disables dynamic provisioning.
@@ -458,14 +458,14 @@ write:
 # Configuration for the read node(s)
 read:
   # -- Number of replicas for the read
-  replicas: 3
+  replicas: 1
   autoscaling:
     # -- Enable autoscaling for the read, this is only used if `queryIndex.enabled: true`
     enabled: false
     # -- Minimum autoscaling replicas for the read
     minReplicas: 1
     # -- Maximum autoscaling replicas for the read
-    maxReplicas: 1
+    maxReplicas: 3
     # -- Target CPU utilisation percentage for the read
     targetCPUUtilizationPercentage: 60
     # -- Target memory utilisation percentage for the read
@@ -514,7 +514,7 @@ read:
   tolerations: []
   persistence:
     # -- Size of persistent disk
-    size: 10Gi
+    size: 2Gi
     # -- Storage class to be used.
     # If defined, storageClassName: <storageClass>.
     # If set to "-", storageClassName: "", which disables dynamic provisioning.
