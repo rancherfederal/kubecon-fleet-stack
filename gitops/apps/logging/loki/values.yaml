@@ -21,19 +21,28 @@ loki:
   # Should authentication be enabled
   auth_enabled: false
 
-# Use either this ingress or the gateway, but not both at once.
-# If you enable this, make sure to disable the gateway.
-# You'll need to supply authn configuration for your ingress controller.
-ingress:
-  enabled: true
-  hosts:
-  - loki.svc.mustafar.lol
-  # tls:
-  #   - hosts:
-  #     - loki.svc.mustafar.lol
-  #     secretName: loki-distributed-tls
+read:
+  # -- Number of replicas for the read
+  replicas: 1
+  persistence:
+    # -- Size of persistent disk
+    size: 2Gi
+    # -- Storage class to be used.
+    # If defined, storageClassName: <storageClass>.
+    # If set to "-", storageClassName: "", which disables dynamic provisioning.
+    # If empty or set to null, no storageClassName spec is
+    # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
+    storageClass: longhorn
 
-# Configuration for the gateway
 gateway:
-  # -- Specifies whether the gateway should be enabled
-  enabled: false
+  ingress:
+    annotations: {}
+    enabled: true
+    hosts:
+    - loki.svc.mustafar.lol
+      paths:
+      - path: /
+    tls:
+    - hosts:
+      - loki.svc.mustafar.lol
+      secretName: loki-gateway-tls
