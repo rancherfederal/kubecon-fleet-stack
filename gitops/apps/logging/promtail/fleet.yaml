@@ -1,8 +1,8 @@
 defaultNamespace: promtail
 helm:
   repo: https://harbor.mustafar.lol/chartrepo/grafana
-  chart: promtail
-  version: 6.5.0
+  chart: loki-stack
+  version: 2.8.3
   releaseName: promtail
   valuesFiles:
     - values.yaml
