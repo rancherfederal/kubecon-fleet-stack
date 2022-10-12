@@ -36,4 +36,6 @@ promtail:
     # Must be reference in `config.file` to configure `clients`
     # @default -- See `values.yaml`
     clients:
-      - url: http://loki.svc.mustafar.lol/loki/api/v1/push
+      - url: https://loki.svc.mustafar.lol/loki/api/v1/push
+        tls_config:
+          insecure_skip_verify: true
