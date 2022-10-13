@@ -4,21 +4,21 @@ bottlerocket:
   enabled: false
   runtimePath: /run/dockershim.sock
 containerd:
-  enabled: false
-  path: /var/run/containerd/containerd.sock
+  enabled: true
+  path: /run/k3s/containerd/containerd.sock
 controller:
   affinity:
     podAntiAffinity:
       preferredDuringSchedulingIgnoredDuringExecution:
-      - podAffinityTerm:
-          labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - neuvector-controller-pod
-          topologyKey: kubernetes.io/hostname
-        weight: 100
+        - podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - neuvector-controller-pod
+            topologyKey: kubernetes.io/hostname
+          weight: 100
   annotations: {}
   apisvc:
     annotations: {}
@@ -41,7 +41,7 @@ controller:
     enabled: false
   disruptionbudget: 0
   enabled: true
-  env: []
+  env: null
   federation:
     managedsvc:
       annotations: {}
@@ -50,7 +50,7 @@ controller:
           nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         enabled: false
         host: null
-        ingressClassName: ""
+        ingressClassName: ''
         path: /
         secretName: null
         tls: false
@@ -67,7 +67,7 @@ controller:
           nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         enabled: false
         host: null
-        ingressClassName: ""
+        ingressClassName: ''
         path: /
         secretName: null
         tls: false
@@ -86,7 +86,7 @@ controller:
       nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     enabled: false
     host: null
-    ingressClassName: ""
+    ingressClassName: ''
     path: /
     secretName: null
     tls: false
@@ -94,10 +94,10 @@ controller:
   priorityClassName: null
   pvc:
     accessModes:
-    - ReadWriteMany
+      - ReadWriteMany
     capacity: null
     enabled: false
-    storageClass: null
+    storageClass: ''
   ranchersso:
     enabled: true
   replicas: 3
@@ -111,7 +111,7 @@ controller:
       maxSurge: 1
       maxUnavailable: 0
     type: RollingUpdate
-  tolerations: []
+  tolerations: null
 crdwebhook:
   enabled: true
   type: ClusterIP
@@ -121,7 +121,7 @@ crio:
 cve:
   scanner:
     affinity: {}
-    dockerPath: ""
+    dockerPath: ''
     enabled: true
     image:
       hash: null
@@ -137,7 +137,7 @@ cve:
         maxSurge: 1
         maxUnavailable: 0
       type: RollingUpdate
-    tolerations: []
+    tolerations: null
   updater:
     enabled: true
     image:
@@ -150,6 +150,7 @@ cve:
     secure: false
 docker:
   path: /var/run/docker.sock
+  enabled: false
 enforcer:
   enabled: true
   image:
@@ -159,8 +160,8 @@ enforcer:
   priorityClassName: null
   resources: {}
   tolerations:
-  - effect: NoSchedule
-    key: node-role.kubernetes.io/master
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
 k3s:
   enabled: false
   runtimePath: /run/k3s/containerd/containerd.sock
@@ -182,7 +183,7 @@ manager:
       nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     enabled: false
     host: null
-    ingressClassName: ""
+    ingressClassName: ''
     path: /
     secretName: null
     tls: false
@@ -199,7 +200,7 @@ manager:
     annotations: {}
     loadBalancerIP: null
     type: NodePort
-  tolerations: []
+  tolerations: null
 oem: null
 openshift: false
 psp: false
@@ -207,3 +208,13 @@ rbac: true
 registry: harbor.mustafar.lol
 resources: {}
 serviceAccount: neuvector
+global:
+  cattle:
+    # clusterId: c-m-dp495rtm
+    clusterName: services-shared
+    rkePathPrefix: ''
+    rkeWindowsPathPrefix: ''
+    systemDefaultRegistry: harbor.mustafar.lol
+    # systemProjectId: p-sr28m
+    url: https://rancher.mustafar.lol
+  systemDefaultRegistry: harbor.mustafar.lol
