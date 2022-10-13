@@ -1,0 +1,15 @@
+global:
+  datacenter: mustafar-vault
+
+client:
+  enabled: true
+
+server:
+  replicas: 1
+  bootstrapExpect: 1
+  disruptionBudget:
+    maxUnavailable: 0
+  resources:
+    limits:
+      memory: "500Mi"
+      cpu: "500m"
