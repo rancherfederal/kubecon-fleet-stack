@@ -8,4 +8,4 @@ helm:
     - values.yaml
 
 dependsOn:
-- name: secret_store-gitops-apps-secret_store-consul
+- name: secret-store-gitops-apps-secret-store-consul
