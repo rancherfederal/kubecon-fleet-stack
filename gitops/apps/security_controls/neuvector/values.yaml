@@ -210,11 +210,11 @@ resources: {}
 serviceAccount: neuvector
 global:
   cattle:
-    # clusterId: c-m-dp495rtm
+    clusterId: c-m-dp495rtm
     clusterName: services-shared
     rkePathPrefix: ''
     rkeWindowsPathPrefix: ''
     systemDefaultRegistry: harbor.mustafar.lol
-    # systemProjectId: p-sr28m
+    systemProjectId: p-sr28m
     url: https://rancher.mustafar.lol
   systemDefaultRegistry: harbor.mustafar.lol
