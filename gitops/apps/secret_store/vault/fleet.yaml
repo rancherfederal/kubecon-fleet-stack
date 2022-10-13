@@ -1,6 +1,6 @@
 defaultNamespace: vault
 helm:
-  repo: https://helm.releases.hashicorp.com
+  repo: https://harbor.mustafar.lol/chartrepo/hashicorp
   chart: vault
   version: 0.22.0
   releaseName: vault
