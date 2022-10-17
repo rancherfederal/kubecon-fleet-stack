@@ -12,7 +12,7 @@ cloud_secret_name: cattle-global-data:cc-glnl8 #! do script stuff to discover th
 k8s_version: v1.24.2+rke2r1
 
 #! infra settings
-network_name: default/workloads1
+network_name: default/sandbox
 node_image_name: default/ubuntu-2004
 cluster_namespace: default
 
