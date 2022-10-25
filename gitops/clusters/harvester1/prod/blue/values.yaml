@@ -5,6 +5,7 @@ cluster:
   labels:
     environment: prod
     cluster_name: blue
+    location: el8000
   name: prod-blue
 kubernetesVersion: v1.24.2+rke2r1
 monitoring:
@@ -40,7 +41,7 @@ nodepools:
   taints: {}
   quantity: 6
   paused: false
-  diskSize: 80
+  diskSize: 200
   diskBus: virtio
   cpuCount: 8
   memorySize: 16

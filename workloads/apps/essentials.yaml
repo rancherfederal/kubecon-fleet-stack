@@ -7,19 +7,10 @@ spec:
   repo: https://git.mustafar.lol/gitea/kubecon-fleetstack.git
   branch: main
 
-  # To target specific clusters, uncomment this block
-  # targets:
-  # - name: example
-  #   clusterSelector:
-  #     matchLabels:
-  #       cluster: example  
   targets:
   - clusterSelector:
-      matchExpressions:
-      - key: provider.cattle.io
-        operator: NotIn
-        values:
-        - harvester
+      matchLabels:
+        location: el8000
 
   paths:
   - "./gitops/apps/essentials"

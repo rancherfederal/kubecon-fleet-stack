@@ -5,6 +5,7 @@ cluster:
   labels:
     environment: sandbox
     cluster_name: alpha
+    location: el8000
   name: sandbox-alpha
 kubernetesVersion: v1.24.2+rke2r1
 monitoring:
@@ -40,7 +41,7 @@ nodepools:
   taints: {}
   quantity: 3
   paused: false
-  diskSize: 40
+  diskSize: 120
   diskBus: virtio
   cpuCount: 2
   memorySize: 4

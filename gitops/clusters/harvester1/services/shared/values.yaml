@@ -5,6 +5,7 @@ cluster:
   labels:
     environment: services
     cluster_name: shared
+    location: el8000
   name: services-shared
 kubernetesVersion: v1.24.2+rke2r1
 monitoring:
@@ -40,7 +41,7 @@ nodepools:
   taints: {}
   quantity: 6
   paused: false
-  diskSize: 80
+  diskSize: 250
   diskBus: virtio
   cpuCount: 4
   memorySize: 8

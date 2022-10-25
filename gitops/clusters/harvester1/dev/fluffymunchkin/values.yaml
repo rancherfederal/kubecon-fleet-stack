@@ -5,6 +5,7 @@ cluster:
   labels:
     environment: dev
     cluster_name: fluffymunchkin
+    location: el8000
   name: dev-fluffymunchkin
 kubernetesVersion: v1.24.2+rke2r1
 monitoring:
@@ -40,7 +41,7 @@ nodepools:
   taints: {}
   quantity: 3
   paused: false
-  diskSize: 20
+  diskSize: 120
   diskBus: virtio
   cpuCount: 4
   memorySize: 8

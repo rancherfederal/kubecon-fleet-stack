@@ -8,6 +8,7 @@ cluster_short_name: sandbox-pool
 cluster_labels:
     environment: sandbox
     cluster_name: alpha
+    location: el8000
 cluster_annotations: {}
 cloud_secret_name: cattle-global-data:cc-cs572 #! do script stuff to discover this
 k8s_version: v1.24.2+rke2r1
@@ -36,7 +37,7 @@ workers:
   taints: {}
 
   #! disk
-  disk_size_gb: 40
+  disk_size_gb: 120
   ssh_user: ubuntu
   cpu_count: 2
   memory_size_gb: 4

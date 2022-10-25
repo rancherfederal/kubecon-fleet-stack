@@ -8,6 +8,7 @@ cluster_short_name: pb-pool
 cluster_labels:
     environment: prod
     cluster_name: blue
+    location: el8000
 cluster_annotations: {}
 cloud_secret_name: cattle-global-data:cc-cs572 #! do script stuff to discover this
 k8s_version: v1.24.2+rke2r1
@@ -36,7 +37,7 @@ workers:
   taints: {}
 
   #! disk
-  disk_size_gb: 80
+  disk_size_gb: 200
   ssh_user: ubuntu
   cpu_count: 8
   memory_size_gb: 16
