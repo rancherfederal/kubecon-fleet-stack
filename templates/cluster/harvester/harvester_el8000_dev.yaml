@@ -8,7 +8,7 @@ cluster_labels:
     environment: dev
     cluster_name: fluffymunchkin
 cluster_annotations: {}
-cloud_secret_name: cattle-global-data:cc-glnl8 #! do script stuff to discover this
+cloud_secret_name: cattle-global-data:cc-cs572 #! do script stuff to discover this
 k8s_version: v1.24.2+rke2r1
 
 #! infra settings
@@ -37,8 +37,8 @@ workers:
   #! disk
   disk_size_gb: 20
   ssh_user: ubuntu
-  cpu_count: 2
-  memory_size_gb: 4
+  cpu_count: 4
+  memory_size_gb: 8
 
 
 
