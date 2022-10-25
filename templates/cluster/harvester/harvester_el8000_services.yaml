@@ -1,45 +1,51 @@
-#@data/values
----
-cloud_provider: harvester
-
-#! cluster details
-cluter_name: services-shared
-cluster_short_name: svc-pool
-cluster_labels:
+cloudprovider: harvester
+cloudCredentialSecretName: cattle-global-data:cc-cs572
+cluster:
+  annotations: {}
+  labels:
     environment: services
     cluster_name: shared
-cluster_annotations: {}
-cloud_secret_name: cattle-global-data:cc-cs572 #! do script stuff to discover this
-k8s_version: v1.24.2+rke2r1
-
-#! infra settings
-network_name: default/dev
-node_image_name: default/ubuntu-2004
-cluster_namespace: default
-
-#! controlplane nodes
-controlplane:
-  node_count: 3 #! max of 3
+  name: services-shared
+kubernetesVersion: v1.24.2+rke2r1
+monitoring:
+  enabled: false
+rke:
+  localClusterAuthEndpoint:
+    enabled: false
+nodepools:
+- etcd: true
+  controlplane: true
+  worker: false
+  displayName: control-plane-nodes
+  name: control-plane-svc-pool
   labels: {}
   taints: {}
-
-  #! vm spec
-  disk_size_gb: 20
-  ssh_user: ubuntu
-  cpu_count: 2
-  memory_size_gb: 4
-
-#! worker nodes
-workers:
-  node_count: 6
+  quantity: 3
+  paused: false
+  diskSize: 20
+  diskBus: virtio
+  cpuCount: 2
+  memorySize: 4
+  networkName: default/dev
+  networkType: dhcp
+  imageName: default/ubuntu-2004
+  vmNamespace: default
+  sshUser: ubuntu
+- etcd: false
+  controlplane: false
+  worker: true
+  displayName: worker-nodes
+  name: worker-svc-pool
   labels: {}
   taints: {}
-
-  #! disk
-  disk_size_gb: 20
-  ssh_user: ubuntu
-  cpu_count: 4
-  memory_size_gb: 8
-
-
-
+  quantity: 6
+  paused: false
+  diskSize: 80
+  diskBus: virtio
+  cpuCount: 4
+  memorySize: 8
+  networkName: default/dev
+  networkType: dhcp
+  imageName: default/ubuntu-2004
+  vmNamespace: default
+  sshUser: ubuntu

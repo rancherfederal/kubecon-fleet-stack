@@ -36,7 +36,7 @@ workers:
   taints: {}
 
   #! disk
-  disk_size_gb: 20
+  disk_size_gb: 40
   ssh_user: ubuntu
   cpu_count: 2
   memory_size_gb: 4
