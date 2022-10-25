@@ -4,7 +4,7 @@ metadata:
   name: security-controls
   namespace: fleet-default
 spec:
-  repo: https://github.com/rancherfederal/kubecon-fleet-stack.git
+  repo: https://git.mustafar.lol/gitea/kubecon-fleetstack.git
   branch: main
 
   # To target specific clusters, uncomment this block
@@ -18,3 +18,4 @@ spec:
 
   paths:
   - "./gitops/apps/security_controls"
+  
