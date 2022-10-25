@@ -4,6 +4,7 @@ cloud_provider: harvester
 
 #! cluster details
 cluter_name: services-shared
+cluster_short_name: svc-pool
 cluster_labels:
     environment: services
     cluster_name: shared

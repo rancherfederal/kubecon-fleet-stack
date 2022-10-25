@@ -4,6 +4,7 @@ cloud_provider: harvester
 
 #! cluster details
 cluter_name: sandbox-alpha
+cluster_short_name: sandbox-pool
 cluster_labels:
     environment: sandbox
     cluster_name: alpha

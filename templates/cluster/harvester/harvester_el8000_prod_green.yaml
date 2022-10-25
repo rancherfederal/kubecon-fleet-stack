@@ -4,6 +4,7 @@ cloud_provider: harvester
 
 #! cluster details
 cluter_name: prod-green
+cluster_short_name: pg-pool
 cluster_labels:
     environment: prod
     cluster_name: green

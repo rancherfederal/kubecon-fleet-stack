@@ -4,6 +4,7 @@ cloud_provider: harvester
 
 #! cluster details
 cluter_name: prod-blue
+cluster_short_name: pb-pool
 cluster_labels:
     environment: prod
     cluster_name: blue

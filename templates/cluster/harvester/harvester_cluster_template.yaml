@@ -19,7 +19,7 @@ nodepools:
   controlplane: true
   worker: false
   displayName: control-plane-nodes
-  name: control-plane-nodes
+  name: #@ "control-plane-" + data.values.cluster_short_name
 
   labels: #@ data.values.controlplane.labels
   taints: #@ data.values.controlplane.taints
@@ -40,7 +40,7 @@ nodepools:
   controlplane: false
   worker: true
   displayName: "worker-nodes"
-  name: "worker-nodes"
+  name: #@ "worker-" + data.values.cluster_short_name
 
   labels: #@ data.values.workers.labels
   taints: #@ data.values.workers.taints
@@ -50,7 +50,7 @@ nodepools:
   diskSize: #@ data.values.workers.disk_size_gb
   diskBus: virtio
   cpuCount: #@ data.values.workers.cpu_count
-  memorySize: #@ data.values.controlplane.memory_size_gb
+  memorySize: #@ data.values.workers.memory_size_gb
   networkName: #@ data.values.network_name
   networkType: dhcp
   imageName: #@ data.values.node_image_name

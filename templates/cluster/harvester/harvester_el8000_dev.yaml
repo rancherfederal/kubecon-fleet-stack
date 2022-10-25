@@ -4,6 +4,7 @@ cloud_provider: harvester
 
 #! cluster details
 cluter_name: dev-fluffymunchkin
+cluster_short_name: dev-pool
 cluster_labels:
     environment: dev
     cluster_name: fluffymunchkin
