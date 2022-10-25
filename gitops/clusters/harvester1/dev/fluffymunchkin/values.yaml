@@ -17,7 +17,7 @@ nodepools:
   controlplane: true
   worker: false
   displayName: control-plane-nodes
-  name: control-plane-nodes
+  name: control-plane-dev-pool
   labels: {}
   taints: {}
   quantity: 1
@@ -35,7 +35,7 @@ nodepools:
   controlplane: false
   worker: true
   displayName: worker-nodes
-  name: worker-nodes
+  name: worker-dev-pool
   labels: {}
   taints: {}
   quantity: 3
@@ -43,7 +43,7 @@ nodepools:
   diskSize: 20
   diskBus: virtio
   cpuCount: 4
-  memorySize: 4
+  memorySize: 8
   networkName: default/dev
   networkType: dhcp
   imageName: default/ubuntu-2004
