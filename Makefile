@@ -34,7 +34,7 @@ fleet-patch: check-tools
 workloads-check: check-tools
 	@printf "\n===> Synchronizing Workloads with Fleet (dry-run)\n";
 	@kubectx $(LOCAL_CLUSTER_NAME)
-	@ytt -f workloads | kapp deploy -a $(WORKLOADS_KAPP_APP_NAME) -n $(WORKLOADS_NAMESPACE) -f - 
+	@ytt -f $(WORKLOAD_DIR) | kapp deploy -a $(WORKLOADS_KAPP_APP_NAME) -n $(WORKLOADS_NAMESPACE) -f - 
 	@kubectx -
 
 workloads-yes: check-tools

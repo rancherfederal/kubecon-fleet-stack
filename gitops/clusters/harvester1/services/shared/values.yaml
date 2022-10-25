@@ -1,5 +1,5 @@
 cloudprovider: harvester
-cloudCredentialSecretName: cattle-global-data:cc-khtcp
+cloudCredentialSecretName: cattle-global-data:cc-cs572
 cluster:
   annotations: {}
   labels:
@@ -20,13 +20,13 @@ nodepools:
   name: control-plane-nodes
   labels: {}
   taints: {}
-  quantity: 1
+  quantity: 3
   paused: false
-  diskSize: 40
+  diskSize: 20
   diskBus: virtio
   cpuCount: 2
   memorySize: 4
-  networkName: default/services
+  networkName: default/dev
   networkType: dhcp
   imageName: default/ubuntu-2004
   vmNamespace: default
@@ -38,13 +38,13 @@ nodepools:
   name: worker-nodes
   labels: {}
   taints: {}
-  quantity: 3
+  quantity: 6
   paused: false
-  diskSize: 40
+  diskSize: 20
   diskBus: virtio
-  cpuCount: 2
+  cpuCount: 4
   memorySize: 4
-  networkName: default/services
+  networkName: default/dev
   networkType: dhcp
   imageName: default/ubuntu-2004
   vmNamespace: default

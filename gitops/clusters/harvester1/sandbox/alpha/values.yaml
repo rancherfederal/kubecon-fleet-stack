@@ -1,5 +1,5 @@
 cloudprovider: harvester
-cloudCredentialSecretName: cattle-global-data:cc-jxjf4
+cloudCredentialSecretName: cattle-global-data:cc-cs572
 cluster:
   annotations: {}
   labels:
@@ -26,7 +26,7 @@ nodepools:
   diskBus: virtio
   cpuCount: 2
   memorySize: 4
-  networkName: default/workloads1
+  networkName: default/dev
   networkType: dhcp
   imageName: default/ubuntu-2004
   vmNamespace: default
@@ -44,7 +44,7 @@ nodepools:
   diskBus: virtio
   cpuCount: 2
   memorySize: 4
-  networkName: default/workloads1
+  networkName: default/dev
   networkType: dhcp
   imageName: default/ubuntu-2004
   vmNamespace: default
