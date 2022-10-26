@@ -21,7 +21,7 @@ nodepools:
   name: control-plane-sandbox-pool
   labels: {}
   taints: {}
-  quantity: 1
+  quantity: 3
   paused: false
   diskSize: 20
   diskBus: virtio

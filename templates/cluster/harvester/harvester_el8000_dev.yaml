@@ -20,7 +20,7 @@ cluster_namespace: default
 
 #! controlplane nodes
 controlplane:
-  node_count: 1 #! max of 3
+  node_count: 3 #! max of 3
   labels: {}
   taints: {}
 
